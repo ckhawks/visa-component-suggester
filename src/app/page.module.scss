@@ -23,7 +23,7 @@
   
 }
 
-.content-section {
+.contentSection {
   background-color: var(--palette-default-surface-1);
   padding: 4rem;
   border-radius: var(--size-rounded-xlarge);
@@ -31,6 +31,12 @@
     padding: 2rem 4rem;
     justify-content: space-between;
     display: flex;
+    flex-direction: column;
+    .footerMainLinks {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+    }
   }
 
   @media screen and (max-width: 800px) {
@@ -42,4 +48,23 @@
       padding: 2rem;
     }    
   }  
+}
+
+.cannedSuggestionButtons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  & > * {
+    text-wrap: nowrap;
+  }
+}
+
+.codeRender {
+  background-color: rgb(26, 30, 35);
+  color: white;
+  font-family: monospace;
+  padding: 1rem;
+  margin: 1rem 0rem;
+
 }

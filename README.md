@@ -21,6 +21,7 @@ This is a take-home assignment for an interview process for VISA's design engine
 ## Future Areas of Improvement
 Given the limited time constraints of the project, I was not able to implement every feature or layer of polish that I would have liked to.
 - I am not well versed enough in leveraging AI to make it return correct usage of the components.
+- I could not yet get the VISA icons to work (for external links, for example).
 - I am not the best at accessibility but it is something I want to strengthen myself in a lot. I work best when I have things to reference and twist.
 
 ## Running the project locally
