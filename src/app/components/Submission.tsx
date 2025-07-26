@@ -83,7 +83,7 @@ export function Submission() {
                     </Link>.
                 </Typography>               
 
-                <br />
+                
                 {error && <Typography variant="body-2-bold" className={styles.errorText}>{error}</Typography>}
                 
                 <Utility vFlex vFlexCol vGap={4} vMarginTop={8}>
