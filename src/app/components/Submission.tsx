@@ -69,11 +69,11 @@ export function Submission() {
         <>
             <div className={globalStyles.contentSection}>
                 <Typography variant="headline-1">What will you make today?</Typography>
-                <Typography variant="body-2-medium">
+                <Typography variant="body-2-medium" style={{marginTop: '8px'}}>
                     Describe what sort of interface you need, and we'll put it together for you using{" "}
                     <Link
                         aria-label="VISA's design system (opens in a new tab)"
-                        href="./link"
+                        href="https://design.visa.com/"
                         noUnderline
                         target="_blank"
                         rel="noopener noreferrer"
@@ -81,13 +81,12 @@ export function Submission() {
                         VISA's design system
                         <VisaMaximizeTiny />
                     </Link>.
-                </Typography>
-                <br />
-                
+                </Typography>               
 
-                {error && <Typography variant="body-2-bold" className={styles.errorText}>{error}</Typography>}
                 <br />
-                <Utility vFlex vFlexCol vGap={4}>
+                {error && <Typography variant="body-2-bold" className={styles.errorText}>{error}</Typography>}
+                
+                <Utility vFlex vFlexCol vGap={4} vMarginTop={8}>
                     <ScreenReader><Label htmlFor={"user-input"}>Suggestion input (required)</Label></ScreenReader>
 
                     <InputContainer className="v-flex-row">
@@ -102,10 +101,10 @@ export function Submission() {
                         Just want to see how it works? Try a sample below.
                     </Typography>
                     <div className={styles.cannedSuggestionButtons}>
-                        <Button onClick={() => handleOnClickCannedSuggestion("Responsive login form with remember me")} colorScheme="secondary" alternate style={{ position: 'unset', padding: '0rem 1rem' }}>Responsive login form with remember me</Button>
-                        <Button onClick={() => handleOnClickCannedSuggestion("Contact us form")} colorScheme="secondary" alternate style={{ position: 'unset', padding: '0rem 1rem' }}>Contact us form</Button>
-                        <Button onClick={() => handleOnClickCannedSuggestion("Color picker")} colorScheme="secondary" alternate style={{ position: 'unset', padding: '0rem 1rem' }}>Color picker</Button>
-                        <Button onClick={() => handleOnClickCannedSuggestion("Error toast with action button")} colorScheme="secondary" alternate style={{ position: 'unset', padding: '0rem 1rem' }}>Error toast with action button</Button>
+                        <Button onClick={() => handleOnClickCannedSuggestion("Responsive login form with remember me")} alternate style={{ position: 'unset', padding: '0rem 1rem' }}>Responsive login form with remember me</Button>
+                        <Button onClick={() => handleOnClickCannedSuggestion("Contact us form")} alternate style={{ position: 'unset', padding: '0rem 1rem' }}>Contact us form</Button>
+                        <Button onClick={() => handleOnClickCannedSuggestion("Color picker")} alternate style={{ position: 'unset', padding: '0rem 1rem' }}>Color picker</Button>
+                        <Button onClick={() => handleOnClickCannedSuggestion("Error toast with action button")} alternate style={{ position: 'unset', padding: '0rem 1rem' }}>Error toast with action button</Button>
                     </div>
                 </div>                
             </div>

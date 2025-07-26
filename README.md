@@ -10,7 +10,7 @@ This is a take-home assignment for an interview process for VISA's design engine
 
 ## Approach & Technical
 - I wanted to design my user experience to be as concise and to-the-point as possible. I am trying to give the user cognitive space to be imaginative with what they would like to build by reducing the amount of decisions they have to make and the visual load.
-- I decided to buid my project using React/Next.js, as I am most comfortable here. This allows me to use Next.js' API routes bundled alongside my project, and deploy easily to Vercel.
+- I decided to build my project using React/Next.js, as I am most comfortable here. This allows me to use Next.js' API routes bundled alongside my project, and deploy easily to Vercel.
 - I use SCSS modules to bundle styles alongside my components.
 - I wrote the API handler into the Next.js project using the App Router.
 
@@ -19,6 +19,7 @@ This is a take-home assignment for an interview process for VISA's design engine
 - Having a `global.module.scss` probably isn't great but for a project of this size I'll accept it.
 - I did not set up ESLint/any sort of auto-format-on-save, so there probably are some small stylistic issues.
 - I am not leveraging a lot of React/Next.js' server-sided rendering.
+- I avoided using inline styles as much as possible, but there are just a couple included.
 
 ## Future Areas of Improvement
 Given the limited time constraints of the project, I was not able to implement every feature or layer of polish that I would have liked to.
