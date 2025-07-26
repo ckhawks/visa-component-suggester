@@ -1,48 +1,48 @@
 import { NextRequest } from "next/server";
 import { setTimeout } from "timers/promises";
+import { cannedResponses, cannedResponsesCompiled } from "./cannedResponses";
 
-const cannedResponses = {
-  responsiveLoginFormWithRememberMe: `responsive login form with remember me`,
-  mobileNavigationLinks: `mobile navigation links`,
-  contactUsForm: `contact us form`,
-  errorToastWithActionButton: `<Flag messageType="error">
-      <FlagIcon />
-      <FlagContent className="v-pl-2 v-pb-2" role="alert" aria-live="polite">
-        <ScreenReader>error</ScreenReader>
-        <Typography className="v-mb-8">This is required text that describes the flag in more detail.</Typography>
-        <Button colorScheme="secondary">Primary action</Button>
-      </FlagContent>
-      <FlagCloseButton />
-    </Flag>`,
-}
 
-// used from https://stackoverflow.com/a/47480429
-// const delay = ms => new Promise(res => setTimeout(res, ms));
-
+// API handler for serving the stub functionality
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
-  const query = searchParams.get('query')?.toLocaleLowerCase(); // e.g. `/api/submission?query=hello`
+  const query = searchParams.get('query'); // e.g. `/api/submission?query=login%20form`
 
-  console.log("query:", query);
-  await setTimeout(1000);
+  await setTimeout(1000); // fake delay to sell the pretend generation better, and to be able to see the loading state
+  console.log("query", query);
 
-  let response = "";
 
-  switch (query) {
-    case "a":
-      response = cannedResponses.responsiveLoginFormWithRememberMe;
+  // This logic isn't great, I know, but it's just to match and serve the stubs for now
+  let jsx = "";
+  let jsxCompiled = "";
+
+  switch (query?.toLocaleLowerCase()) {
+    case "responsive login form with remember me":
+      jsx = cannedResponses.responsiveLoginFormWithRememberMe;
+      jsxCompiled = cannedResponsesCompiled.responsiveLoginFormWithRememberMe;
       break;
-    case "b":
-      response = cannedResponses.contactUsForm;
+    case "color picker":
+      jsx = cannedResponses.colorPicker;
+      jsxCompiled = cannedResponsesCompiled.colorPicker;
+      break;
+    case "contact us form":
+      jsx = cannedResponses.contactUsForm;
+      jsxCompiled = cannedResponsesCompiled.contactUsForm;
+      break;
+    case "error toast with action button":
+      jsx = cannedResponses.errorToastWithActionButton;
+      jsxCompiled = cannedResponsesCompiled.errorToastWithActionButton;
       break;
     default:
-      var values = Object.values(cannedResponses);
-      response = values[Math.floor(values.length * Math.random())];
+      // choose a random thing
+      let randomKey = Math.floor(Object.keys(cannedResponses).length * Math.random())
+      jsx = Object.values(cannedResponses)[randomKey];
+      jsxCompiled = Object.values(cannedResponsesCompiled)[randomKey];
       break;
   }
 
   return new Response(
-    JSON.stringify({ query: `${query}`, jsx: response }),
+    JSON.stringify({ query: `${query}`, jsx: jsx, jsxCompiled: jsxCompiled }),
     {
       headers: { 'Content-Type': 'application/json' },
     },

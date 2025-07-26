@@ -1,32 +1,41 @@
+import { VisaMaximizeTiny } from '@visa/nova-icons-react';
 import styles from '../page.module.scss'
+import { Link, Typography } from '@visa/nova-react';
 
 export function Footer() {
     return (<div className={`${styles.contentSection} ${styles.footer}`}>
         <div className={styles.footerMainLinks}>
-            <span className="v-typography-body-2">
+            <Typography variant="body-2">
                 Made by{" "}
-                <a aria-label="Carter Hawks (opens a new tab)" className="v-link v-link-no-underline" href="https://design.stellaric.pw/" rel="noreferrer noopener" target="_blank">
+                <Link
+                    aria-label="Carter Hawks (opens in a new tab)"
+                    href="https://design.stellaric.pw"
+                    noUnderline
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Carter Hawks
-                    <svg aria-hidden="true" className={"v-icon v-icon-generic v-icon-tiny v-icon-information"} focusable="false" viewBox="0 0 16 16">
-                        <svg v-icon-visa-maximize-tiny={"true"} aria-label="visa maximize tiny" />
-                    </svg>
-
-                </a>
-            </span>
-            <span className="v-typography-body-2" style={{ textAlign: 'right' }}>
+                    <VisaMaximizeTiny />
+                </Link>
+            </Typography>
+            <Typography variant="body-2" style={{ textAlign: 'right' }}>
                 Browse source on{" "}
-                <a aria-label="VISA Component Suggester on GitHub (opens a new tab)" className="v-link v-link-no-underline" href="https://github.com/ckhawks/visa-component-suggester" rel="noreferrer noopener" target="_blank">
+                <Link
+                    aria-label="VISA Component Suggester on GitHub (opens in a new tab)"
+                    href="https://github.com/ckhawks/visa-component-suggester"
+                    noUnderline
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     GitHub
-                    <svg aria-hidden="true" className={"v-icon v-icon-generic v-icon-tiny v-icon-information"} focusable="false" viewBox="0 0 16 16">
-                        <svg v-icon-visa-maximize-tiny={"true"} aria-label="visa maximize tiny" />
-                    </svg>
-                </a>
-            </span>
+                    <VisaMaximizeTiny />
+                </Link>
+            </Typography>
         </div>
         <div className={styles.footerLowerNotices}>
-            <span className="v-typography-body-2" style={{ textAlign: 'right' }}>
-                This project is not in any way affiliated or representative of VISA.
-            </span>
+            <Typography variant="body-2" style={{ textAlign: 'right' }}  colorScheme="subtle">
+                This project is not in any way affiliated or representative of VISA, and was made for an interview.
+            </Typography>
         </div>
 
     </div>);
