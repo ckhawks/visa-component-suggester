@@ -20,33 +20,14 @@
   align-items: center;
   background-color: var(--palette-messaging-highlight-info);
   min-height: 100vh;
-  
 }
 
 .contentSection {
   background-color: var(--palette-default-surface-1);
   padding: 4rem;
   border-radius: var(--size-rounded-xlarge);
-  &.footer {
-    padding: 2rem 4rem;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2rem;
-    .footerMainLinks {
-      display: flex;
-      // align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      flex-direction: row;
-    }
-  }
 
   @media screen and (max-width: 800px) {
-    &.footer {
-      padding: 2rem;
-    }
     & {
       border-radius: 0;
       padding: 2rem;
@@ -54,20 +35,5 @@
   }  
 }
 
-.cannedSuggestionButtons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  & > * {
-    text-wrap: nowrap;
-  }
-}
 
-.codeRender {
-  background-color: rgb(26, 30, 35);
-  color: white;
-  font-family: monospace;
-  padding: 1rem;
-  margin: 1rem 0rem;
-}
+

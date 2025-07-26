@@ -1,0 +1,22 @@
+.codeRender {
+    background-color: rgb(26, 30, 35);
+    color: white;
+    font-family: monospace;
+    padding: 1rem;
+    margin: 1rem 0rem;
+}
+
+.cannedSuggestionButtons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    & > * {
+        text-wrap: nowrap;
+    }
+}
+
+.errorText {
+    color: red;
+    margin-top: 1rem;
+}

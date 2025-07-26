@@ -1,11 +1,12 @@
 "use client";
 
-import { Button, Checkbox, Flag, FlagCloseButton, FlagContent, FlagIcon, Input, InputContainer, Label, Link, ScreenReader, Textarea, Tooltip, Typography, Utility, UtilityFragment } from "@visa/nova-react";
+import { Button, InputContainer, Label, Link, ScreenReader, Textarea, Typography, Utility } from "@visa/nova-react";
 
-import styles from '../page.module.scss';
+import globalStyles from '../global.module.scss';
+import styles from './Submission.module.scss';
 import { useState } from "react";
 import CopyToClipboard from "./CopyToClipboard";
-import { VisaAccessibilityTiny, VisaMaximizeTiny, VisaPasswordHideTiny, VisaPasswordShowTiny } from "@visa/nova-icons-react";
+import { VisaMaximizeTiny } from "@visa/nova-icons-react";
 
 interface SuggestionResponse {
     query: string;
@@ -14,13 +15,14 @@ interface SuggestionResponse {
 }
 
 export function Submission() {
-    const [sending, setSending] = useState<boolean>(false);
-    const [suggestionInput, setSuggestionInput] = useState<string>("");
-    const [error, setError] = useState<null | string>(null);
+    const [sending, setSending] = useState<boolean>(false); // loading state
+    const [suggestionInput, setSuggestionInput] = useState<string>(""); // used to control the textarea state
+    const [error, setError] = useState<null | string>(null); // display errors sending request
     const [suggestionData, setSuggestionData] = useState<null | SuggestionResponse>(null);
 
+    // handle when user clicks Go! button, or when they click a canned response
     const handleOnSubmit = async (queryParam?: string) => {
-        setSending(true);
+        setSending(true); // set loading state
         setError(null); // Clear previous errors
         setSuggestionData(null); // Clear previous suggestions
 
@@ -34,7 +36,6 @@ export function Submission() {
 
         try {
             setSuggestionData(null);
-            console.log("suggestionInput", suggestionInput);
             const response = await fetch('/api/suggestion?' + new URLSearchParams({
                 query: queryToUse,
             }).toString(), {
@@ -66,10 +67,9 @@ export function Submission() {
 
     return (
         <>
-            <div className={styles.contentSection}>
-                {/* <Typography variant="display-2">Component Suggester</Typography> */}
+            <div className={globalStyles.contentSection}>
                 <Typography variant="headline-1">What will you make today?</Typography>
-                <span className="v-typography-body-2-medium">
+                <Typography variant="body-2-medium">
                     Describe what sort of interface you need, and we'll put it together for you using{" "}
                     <Link
                         aria-label="VISA's design system (opens in a new tab)"
@@ -81,10 +81,12 @@ export function Submission() {
                         VISA's design system
                         <VisaMaximizeTiny />
                     </Link>.
-                </span>
+                </Typography>
                 <br />
-                <br />
+                
 
+                {error && <Typography variant="body-2-bold" className={styles.errorText}>{error}</Typography>}
+                <br />
                 <Utility vFlex vFlexCol vGap={4}>
                     <ScreenReader><Label htmlFor={"user-input"}>Suggestion input (required)</Label></ScreenReader>
 
@@ -95,28 +97,25 @@ export function Submission() {
                 </Utility>
 
                 <br />
-                <div style={{ display: '', boxSizing: 'border-box', flexDirection: 'column', gap: '0.5rem' }}>
-                    <div className="v-typography-body-2-medium" style={{ paddingBottom: '0.5rem' }}>
+                <div style={{ flexDirection: 'column', gap: '0.5rem' }}>
+                    <Typography variant="body-2-medium" style={{ paddingBottom: '0.5rem' }}>
                         Just want to see how it works? Try a sample below.
-                    </div>
+                    </Typography>
                     <div className={styles.cannedSuggestionButtons}>
                         <Button onClick={() => handleOnClickCannedSuggestion("Responsive login form with remember me")} colorScheme="secondary" alternate style={{ position: 'unset', padding: '0rem 1rem' }}>Responsive login form with remember me</Button>
                         <Button onClick={() => handleOnClickCannedSuggestion("Contact us form")} colorScheme="secondary" alternate style={{ position: 'unset', padding: '0rem 1rem' }}>Contact us form</Button>
                         <Button onClick={() => handleOnClickCannedSuggestion("Color picker")} colorScheme="secondary" alternate style={{ position: 'unset', padding: '0rem 1rem' }}>Color picker</Button>
                         <Button onClick={() => handleOnClickCannedSuggestion("Error toast with action button")} colorScheme="secondary" alternate style={{ position: 'unset', padding: '0rem 1rem' }}>Error toast with action button</Button>
                     </div>
-                </div>
-
+                </div>                
             </div>
-            {sending && <div className={styles.contentSection}>
+
+            {sending && <div className={globalStyles.contentSection}>
                 <Typography variant="headline-2">Loading suggested components...</Typography>
             </div>}
-            {suggestionData && suggestionData.jsx && suggestionData.jsxCompiled && <div className={styles.contentSection}>
-                {/* <Typography variant="headline-1">Suggested Components</Typography> */}
+
+            {suggestionData && suggestionData.jsx && suggestionData.jsxCompiled && <div className={globalStyles.contentSection}>
                 <Typography variant="headline-1">{suggestionData.query}</Typography>
-                {/* <span className="v-typography-body-2-medium">
-                    {suggestionData.query}
-                </span> */}
                 <br />
                 <Typography variant="headline-3">Preview</Typography>
                 <br />
