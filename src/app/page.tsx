@@ -1,4 +1,4 @@
-import styles from "./global.module.scss";
+import styles from "./page.module.scss";
 import { Footer } from "./components/Footer";
 import { Submission } from "./components/Submission";
 

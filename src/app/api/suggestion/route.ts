@@ -16,6 +16,7 @@ export async function GET(request: NextRequest) {
   let jsx = "";
   let jsxCompiled = "";
 
+  // And also matching these with text isn't great, but that is temporary just for the stubbing
   switch (query?.toLocaleLowerCase()) {
     case "responsive login form with remember me":
       jsx = cannedResponses.responsiveLoginFormWithRememberMe;

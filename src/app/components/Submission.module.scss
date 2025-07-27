@@ -2,7 +2,6 @@
     background-color: rgb(26, 30, 35);
     color: white;
     font-family: monospace;
-    padding: 1rem;
     margin: 1rem 0rem;
 }
 
@@ -14,6 +13,11 @@
     & > * {
         text-wrap: nowrap;
     }
+}
+
+.cannedSuggestionButton {
+    position: unset;
+    padding: 0rem 1rem;
 }
 
 .errorText {
