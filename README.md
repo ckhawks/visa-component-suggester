@@ -10,22 +10,26 @@ This is a take-home assignment for an interview process for VISA's design engine
 
 ## Approach & Technical
 - I wanted to design my user experience to be as concise and to-the-point as possible. I am trying to give the user cognitive space to be imaginative with what they would like to build by reducing the amount of decisions they have to make and the visual load.
-- I decided to build my project using React/Next.js, as I am most comfortable here. This allows me to use Next.js' API routes bundled alongside my project, and deploy easily to Vercel.
-- I use SCSS modules to bundle styles alongside my components.
-- I wrote the API handler into the Next.js project using the App Router.
+- I decided to build my project using React/Next.js, as I am most comfortable here. This allows me to use Next.js' API routes bundled alongside my frontend project, and deploy easily to Vercel.
+- I use SCSS modules to bundle styles alongside my components, limiting global styles where possible.
+- My philosophy to development is that I want my code to be understandable to someone (or myself) coming back to it in 6 months.
 
 ## Assumptions & Shortcuts
-- I stubbed out the suggestion generation to the 4 canned pre-made queries, and then randomly selecting one when the user enters something else.
-- Having a `global.module.scss` probably isn't great but for a project of this size I'll accept it.
-- I did not set up ESLint/any sort of auto-format-on-save, so there probably are some small stylistic issues.
+- I stubbed out the suggestion generation to 4 canned pre-made queries, and then when a user submits their input, it randomly selects one to return to the user.
+- Having a `global.module.scss` at all probably isn't great but for a project of this size I'll accept it. The use case for this project would likely be solved by a SCSS mixin.
+- I did not set up ESLint/Prettier/any sort of auto-format-on-save, so there probably are some small stylistic issues.
 - I am not leveraging a lot of React/Next.js' server-sided rendering.
 - I avoided using inline styles as much as possible, but there are just a couple included.
 
 ## Future Areas of Improvement
 Given the limited time constraints of the project, I was not able to implement every feature or layer of polish that I would have liked to.
-- I am not well versed enough in leveraging AI to make it return correct usage of the components.
-- I am not the best at accessibility but it is something I want to strengthen myself in a lot. I work best when I have things to reference and twist.
-- There were definitely pieces of the design system I missed that I can replace some of the custom styling with. This is unfortunately due to lack of familiarity with the design system, but that will come with time!
+- Leveraging AI to make it return correct usage of the components.
+- Improving accessibility
+- Utilizing the VISA design system further
+- Persisting queries either through LocalStorage or an external database
+
+## Leveraging AI
+- I used AI for some simple how-to questions (how to do syntax highlighting, how to do copy to clipboard), and for code review / best practices questions.
 
 ## Running the project locally
 

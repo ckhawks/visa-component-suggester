@@ -1,10 +1,12 @@
 import { VisaMaximizeTiny } from '@visa/nova-icons-react';
-import globalStyles from '../global.module.scss';
-import styles from './Footer.module.scss';
 import { Link, Typography } from '@visa/nova-react';
 
+// local imports
+import globalStyles from '../global.module.scss';
+import styles from './Footer.module.scss';
+
 export function Footer() {
-    return (<div className={`${styles.footer} ${globalStyles.contentSection} `}>
+    return (<div className={`${styles.footer} ${globalStyles.contentSection}`}>
         <div className={styles.footerMainLinks}>
             <Typography variant="body-2">
                 Made by{" "}
@@ -33,6 +35,7 @@ export function Footer() {
                 </Link>
             </Typography>
         </div>
+
         <div className={styles.footerLowerNotices}>
             <Typography variant="body-2"  colorScheme="subtle">
                 This project is not in any way affiliated or representative of VISA, and was made for an interview.

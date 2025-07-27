@@ -1,76 +1,74 @@
 // The stubbed responses that the user would use to put into their React project
 export const cannedResponses = {
   responsiveLoginFormWithRememberMe: `<Utility vFlex vFlexCol vGap={8}>
-                    <Utility vFlex vFlexCol vGap={4}>
-                        <Label htmlFor={"login-username"}>Username (required)</Label>
-                        <InputContainer>
-                            <Input aria-required="true" id={"login-username"} type="text" /> 
-                        </InputContainer>
-                    </Utility>
-                    <Utility vFlex vFlexCol vGap={4}>
-                        <Label htmlFor={"login-password"}>Password (required)</Label>
-                        <InputContainer>
-                            <Input aria-required="true" defaultValue="" id={"login-password"} type={'password'} />
-                            <Button aria-label={'show text'} buttonSize="small" colorScheme="tertiary" iconButton >
-                                <VisaPasswordShowTiny /> 
-                            </Button>
-                        </InputContainer>
-                    </Utility>
-                    <Utility vAlignItems="center" vFlex vGap={2} vMarginTop={4}>
-                        <Checkbox checked={false} id={"login-checkbox-remember-me"} />
-                        <Label htmlFor={"login-checkbox-remember-me"}>Remember me</Label>
-                    </Utility>
-                </Utility>`,
+  <Utility vFlex vFlexCol vGap={4}>
+    <Label htmlFor={"login-username"}>Username (required)</Label>
+    <InputContainer>
+      <Input aria-required="true" id={"login-username"} type="text" /> 
+    </InputContainer>
+  </Utility>
+  <Utility vFlex vFlexCol vGap={4}>
+    <Label htmlFor={"login-password"}>Password (required)</Label>
+    <InputContainer>
+      <Input aria-required="true" defaultValue="" id={"login-password"} type={'password'} />
+      <Button aria-label={'show text'} buttonSize="small" colorScheme="tertiary" iconButton >
+        <VisaPasswordShowTiny /> 
+      </Button>
+    </InputContainer>
+  </Utility>
+  <Utility vAlignItems="center" vFlex vGap={2} vMarginTop={4}>
+    <Checkbox checked={false} id={"login-checkbox-remember-me"} />
+    <Label htmlFor={"login-checkbox-remember-me"}>Remember me</Label>
+  </Utility>
+</Utility>`,
   colorPicker: `<Utility vFlex vAlignItems="center" vGap={6}>
-      <UtilityFragment vFlexGrow0 style={{ flexBasis: '5%' }}>
-        <Input id={"color-picker"} type="color" />
-      </UtilityFragment>
-      <Label htmlFor={"color-picker"}>Your favorite color</Label>
-      <Utility vAlignItems="center" vFlex vFlexCol vGap={2}>
-      <Button 
-        aria-labelledby={"color-picker-label"}
-        aria-label="Color selector accessibility information"
-        colorScheme="tertiary"
-        iconButton
-        >
-          <VisaAccessibilityTiny rtl />
-        </Button>
-      </Utility>
-    </Utility>`,
+  <UtilityFragment vFlexGrow0 style={{ flexBasis: '5%' }}>
+    <Input id={"color-picker"} type="color" />
+  </UtilityFragment>
+  <Label htmlFor={"color-picker"}>Your favorite color</Label>
+  <Utility vAlignItems="center" vFlex vFlexCol vGap={2}>
+  <Button 
+    aria-labelledby={"color-picker-label"}
+    aria-label="Color selector accessibility information"
+    colorScheme="tertiary"
+    iconButton
+    >
+      <VisaAccessibilityTiny rtl />
+    </Button>
+  </Utility>
+</Utility>`,
   contactUsForm: `<Utility vFlex vFlexCol vGap={8}>
-                <Utility vFlex vFlexCol vGap={4}>
-                <Label htmlFor={"contact-us-name"}>Name (required)</Label>
-      <InputContainer>
-        <Input aria-required="true" id={"contact-us-name"} type="text" />
-      </InputContainer>
-      </Utility>
-      <Utility vFlex vFlexCol vGap={4}>
-      <Label htmlFor={"contact-us-email"}>Email (required)</Label>
-      <InputContainer>
-        <Input aria-required="true" id={"contact-us-email"} type="text" />
-      </InputContainer>
-    </Utility>
-    <Utility vFlex vFlexCol vGap={4}>
-                    <Label htmlFor={"contact-us-message-input"}>Message (required)</Label>
-                    <InputContainer className="v-flex-row">
-                        <Textarea aria-required="true" fixed id={"contact-us-message-input"} name={"user-input"} style={{ blockSize: '130px' }} placeholder={"Enter your message"} />
-                    </InputContainer>
-                    
-                </Utility>
-                <Utility vFlex vFlexCol vGap={4}>
-                <Button>Submit</Button>
-                    
-                </Utility>
-                </Utility>`,
+  <Utility vFlex vFlexCol vGap={4}>
+    <Label htmlFor={"contact-us-name"}>Name (required)</Label>
+    <InputContainer>
+      <Input aria-required="true" id={"contact-us-name"} type="text" />
+    </InputContainer>
+  </Utility>
+  <Utility vFlex vFlexCol vGap={4}>
+    <Label htmlFor={"contact-us-email"}>Email (required)</Label>
+    <InputContainer>
+      <Input aria-required="true" id={"contact-us-email"} type="text" />
+    </InputContainer>
+  </Utility>
+  <Utility vFlex vFlexCol vGap={4}>
+    <Label htmlFor={"contact-us-message-input"}>Message (required)</Label>
+    <InputContainer className="v-flex-row">
+      <Textarea aria-required="true" fixed id={"contact-us-message-input"} name={"user-input"} style={{ blockSize: '130px' }} placeholder={"Enter your message"} />
+    </InputContainer>
+  </Utility>
+  <Utility vFlex vFlexCol vGap={4}>
+    <Button>Submit</Button>   
+  </Utility>
+</Utility>`,
   errorToastWithActionButton: `<Flag messageType="error">x
-      <FlagIcon />
-      <FlagContent className="v-pl-2 v-pb-2" role="alert" aria-live="polite">
-        <ScreenReader>error</ScreenReader>
-        <Typography className="v-mb-8">There was an error processing your request.</Typography>
-        <Button colorScheme="secondary">Get help</Button>
-      </FlagContent>
-      <FlagCloseButton />
-    </Flag>`,
+  <FlagIcon />
+  <FlagContent className="v-pl-2 v-pb-2" role="alert" aria-live="polite">
+    <ScreenReader>error</ScreenReader>
+    <Typography className="v-mb-8">There was an error processing your request.</Typography>
+    <Button colorScheme="secondary">Get help</Button>
+  </FlagContent>
+  <FlagCloseButton />
+</Flag>`,
 }
 
 // This is a hack that is necessary with this stubbed project because the JSX above is not getting rendered/compiled to the real HTML when we dangerouslySetInnerHTML (in Submission.tsx)
